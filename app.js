@@ -31,7 +31,7 @@ const prev = document.querySelector(".prev");
 const next = document.querySelector(".next");
 const title = document.querySelector(".title");
 const text = document.querySelector(".text");
-const imgM = document.querySelector(".mobile");
+const imgM = document.querySelector(".mobile-hero");
 const imgD = document.querySelector(".desktop");
 let i = 0;
 

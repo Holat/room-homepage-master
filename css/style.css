@@ -39,6 +39,11 @@ a {
   transform: translateY(-100%);
   transition: transform 0.5s ease-out;
 }
+@media (min-width: 1440px) {
+  .back {
+    display: none;
+  }
+}
 
 .toggle {
   cursor: pointer;
@@ -48,10 +53,26 @@ a {
   display: none;
 }
 
+@media (min-width: 1440px) {
+  .mobile {
+    display: none;
+  }
+  .desktop {
+    display: unset;
+  }
+}
 .navBar {
   position: absolute;
   width: 100%;
   z-index: 4;
+}
+@media (min-width: 1440px) {
+  .navBar {
+    display: flex;
+    align-items: center;
+    width: 28%;
+    padding-left: 1.5rem;
+  }
 }
 .navBar .logo-cont {
   display: flex;
@@ -85,6 +106,39 @@ a {
 .navBar .nav ul li:hover {
   color: var(--Dark-Gray);
 }
+@media (min-width: 1440px) {
+  .navBar .nav ul li {
+    position: relative;
+    display: flex;
+    padding-block: 8px;
+  }
+  .navBar .nav ul li::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    transform: translateX(50%);
+    width: 50%;
+    height: 2.5px;
+    border-radius: 1px;
+    transition: background-color 0.2s ease;
+  }
+  .navBar .nav ul li:hover {
+    color: white;
+  }
+  .navBar .nav ul li:hover::after {
+    background-color: white;
+  }
+}
+@media (min-width: 1440px) {
+  .navBar .nav {
+    transform: translateY(0);
+    background-color: transparent;
+    color: white;
+    position: unset;
+    width: auto;
+    padding: auto;
+  }
+}
 .navBar .nav-toggle {
   transform: translateY(0);
 }
@@ -95,6 +149,11 @@ a {
 .header .head {
   display: flex;
   flex-direction: column;
+}
+@media (min-width: 1440px) {
+  .header .head {
+    flex-direction: row;
+  }
 }
 .header .head .headNav {
   position: relative;
@@ -113,6 +172,11 @@ a {
   right: 0;
   position: absolute;
   cursor: pointer;
+}
+@media (min-width: 1440px) {
+  .header .head .headNav .arrow {
+    transform: translateX(100%);
+  }
 }
 .header .head .headNav .arrow img {
   padding: 1.3rem 1.5rem;
