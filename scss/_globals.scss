@@ -1,0 +1,68 @@
+@use 'breakpoint' as b;
+*{
+    box-sizing: border-box;
+    font-size: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'League Spartan', sans-serif;
+    // height: 100vh;
+}
+
+.container{
+    width: 100%;
+}
+
+ul{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.back{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 3;
+    transform: translateY(-100%);
+    transition: transform 0.5s ease-out;
+
+    @include b.breakpoint(large){
+        display: none;
+    }
+}
+
+.toggle{
+    cursor: pointer;
+}
+
+.desktop{
+    display: none;
+}
+
+@include b.breakpoint(medium){
+    .mobile{
+        display: none;
+    }
+
+    .desktop{
+        display: unset;
+    }
+}
+
+@include b.breakpoint(large){
+    .mobile{
+        display: none;
+    }
+
+    .desktop{
+        display: unset;
+    }
+}

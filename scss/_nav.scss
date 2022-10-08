@@ -1,0 +1,92 @@
+@use 'breakpoint' as b;
+.navBar{
+    position: absolute;
+    width: 100%;
+    z-index: 4;
+
+    @include b.breakpoint(large){
+        display: flex;
+        align-items: center;
+        width: 28%;
+        padding-left: 2.5rem;
+    }
+
+    .logo-cont{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-block: 3rem;
+        padding-left: 1.5rem;
+        width: calc(50% + 1.5rem);
+    }
+
+    .nav{
+        background-color: white;
+        position: fixed;
+        top: 0;
+        padding-block: 3rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateY(-100%);
+        transition: transform 0.5s ease;
+
+        @include b.breakpoint(large){
+            padding: 0;
+        }
+
+        ul{
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            font-weight: bolder;
+
+            li{
+                cursor: pointer;
+
+                &:hover{
+                    color: var(--Dark-Gray);
+                }
+
+                @include b.breakpoint(large){
+                    position: relative;
+                    display: flex;
+                    padding-block: 8px;
+
+                    &::after{
+                        content: "";
+                        position: absolute;
+                        bottom: 0;
+                        transform: translateX(50%);
+                        width: 50%;
+                        height: 2.5px;
+                        border-radius: 1px;
+                        transition: background-color 0.2s ease;
+                    }
+                    
+                    &:hover{
+                        color: white;
+
+                        &::after{
+                            background-color: white;
+                        }
+                    }
+                }
+            }
+        }
+
+        @include b.breakpoint(large){
+            transform: translateY(0);
+            background-color: transparent;
+            color: white;
+            position: unset;
+            width: auto;
+            padding: auto;
+        }
+    }
+
+    .nav-toggle{
+        transform: translateY(0);
+    }
+}

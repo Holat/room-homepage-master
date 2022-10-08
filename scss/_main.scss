@@ -1,0 +1,30 @@
+@use 'breakpoint' as b;
+.main{
+    display: flex;
+    flex-direction: column;
+
+    
+    .about{
+        padding: 3rem 1.5rem;
+        
+        h3{
+            text-transform: uppercase;
+            letter-spacing: 0.45em;
+            font-size: 0.9rem;
+        }
+        
+        p{
+            color: var(--Dark-Gray);
+            margin-top: 1.2rem;
+            line-height: 1.3em;
+        }
+    }
+
+    @include b.breakpoint(large){
+        flex-direction: row;
+
+        .about{
+            padding: 3rem 2.2rem;
+        }
+    }
+}
