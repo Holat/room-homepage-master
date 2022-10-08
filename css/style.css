@@ -53,6 +53,14 @@ a {
   display: none;
 }
 
+@media (min-width: 376px) {
+  .mobile {
+    display: none;
+  }
+  .desktop {
+    display: unset;
+  }
+}
 @media (min-width: 1440px) {
   .mobile {
     display: none;
@@ -71,7 +79,7 @@ a {
     display: flex;
     align-items: center;
     width: 28%;
-    padding-left: 1.5rem;
+    padding-left: 2.5rem;
   }
 }
 .navBar .logo-cont {
@@ -93,6 +101,11 @@ a {
   justify-content: space-around;
   transform: translateY(-100%);
   transition: transform 0.5s ease;
+}
+@media (min-width: 1440px) {
+  .navBar .nav {
+    padding: 0;
+  }
 }
 .navBar .nav ul {
   display: flex;
@@ -163,6 +176,14 @@ a {
   display: flex;
   overflow: hidden;
 }
+.header .head .headNav .hero1 img {
+  width: 100%;
+}
+@media (min-width: 1440px) {
+  .header .head .headNav .hero1 img {
+    width: auto;
+  }
+}
 .header .head .headNav .arrow {
   background-color: black;
   display: flex;
@@ -173,17 +194,21 @@ a {
   position: absolute;
   cursor: pointer;
 }
-@media (min-width: 1440px) {
-  .header .head .headNav .arrow {
-    transform: translateX(100%);
-  }
-}
 .header .head .headNav .arrow img {
   padding: 1.3rem 1.5rem;
   width: 3.6rem;
 }
 .header .head .headNav .arrow img:hover {
   background-color: var(--Very-Dark-Gray);
+}
+@media (min-width: 1440px) {
+  .header .head .headNav .arrow {
+    transform: translateX(100%);
+  }
+  .header .head .headNav .arrow img {
+    padding: 2rem;
+    width: 5rem;
+  }
 }
 .header .head .article {
   padding: 3rem 1.5rem;
@@ -216,6 +241,27 @@ a {
 .header .head .article .shopNow:hover img {
   filter: invert(78%) sepia(4%) saturate(13%) hue-rotate(128deg) brightness(82%) contrast(87%);
 }
+@media (min-width: 1440px) {
+  .header .head .article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-inline: 5.5rem;
+  }
+  .header .head .article h1 {
+    font-size: 3rem;
+  }
+  .header .head .article p {
+    min-height: unset;
+  }
+  .header .head .article .shopNow {
+    margin-top: 1.5rem;
+  }
+  .header .head .article .shopNow h2 {
+    font-size: 1rem;
+    letter-spacing: 0.7em;
+  }
+}
 
 .main {
   display: flex;
@@ -233,4 +279,12 @@ a {
   color: var(--Dark-Gray);
   margin-top: 1.2rem;
   line-height: 1.3em;
+}
+@media (min-width: 1440px) {
+  .main {
+    flex-direction: row;
+  }
+  .main .about {
+    padding: 3rem 2.2rem;
+  }
 }/*# sourceMappingURL=style.css.map */
